@@ -327,6 +327,7 @@ JavaScriptExecutor to switch the windows or tabs.
  {
  js1.executeScript("window.open(arguments[0])",windowhandle);
  }
+ 
 16) How to add the urls to the list and to handle the windows by switching?
 A. 
 // By adding urls to list array
@@ -339,24 +340,21 @@ A.
  js.executeScript("window.open(arguments[0])", urls);
  }
  driver.switchTo().window(driver.getWindowHandle());
+ 
 17) Explain the Page Object Model (POM) and its advantages?
-A. Page Object Model (POM) is a design pattern in Selenium for creating 
- repository for web elements.
-i) It involves creating separate classes for each web page or component, 
- encapsulating page elements and their actions within these classes.
-ii) Advantages include improved code maintainability, reusability, and readability,
- as well as reduced code duplication.
+A. Page Object Model (POM) is a design pattern in Selenium for creating repository for web elements.
+i) It involves creating separate classes for each web page or component, encapsulating page elements and their actions within these classes.
+ii) Advantages include improved code maintainability, reusability, and readability, as well as reduced code duplication.
+
 Key Concepts of POM:
 Page Classes : Each web page in the application is represented by a separate class.
- The class contains web elements (fields) and methods (functions) that
-interact with these elements.
-Web Elements : Web elements on the page (such as text boxes, buttons, links) are 
-defined in the Page class using locators 
+ The class contains web elements (fields) and methods (functions) that interact with these elements.
+Web Elements : Web elements on the page (such as text boxes, buttons, links) are defined in the Page class using locators 
  (e.g., @FindBy annotations in Java).
-Methods : Methods in the Page class perform operations on the web elements, such as
-clicking a button or entering text in a field. 
+Methods : Methods in the Page class perform operations on the web elements, such as clicking a button or entering text in a field. 
  These methods encapsulate the logic for interacting with the page.
-18) How do you handle alerts and pop-ups in Selenium?
+
+19) How do you handle alerts and pop-ups in Selenium?
 A. You can handle alerts and pop-ups in Selenium using methods provided by 
 WebDriver's Alert interface, such as accept(), dismiss(), getText().
 // Clicking on a button to trigger an alert
@@ -378,90 +376,74 @@ WebDriver's Alert interface, such as accept(), dismiss(), getText().
  Handling prompt boxes
 // SendKeys to the prompt box
  alert.sendKeys("Text to be entered");
+ 
 19) What are the advantages of using TestNG with Selenium?
-A. TestNG is a testing framework that provides additional functionalities like 
-grouping, parameterization, parallel execution, and reporting capabilities, which 
-enhance Selenium test automation.
- It allows better organization and management of test cases, simplifies test 
-execution, and provides detailed test reports.
-20) Explain the difference between close() and quit() methods in Selenium 
-WebDriver?
+A. TestNG is a testing framework that provides additional functionalities like grouping, parameterization, parallel execution, and reporting capabilities, which enhance Selenium test automation.
+ It allows better organization and management of test cases, simplifies test execution, and provides detailed test reports.
+
+21) Explain the difference between close() and quit() methods in Selenium WebDriver?
 A. close(): Closes the current browser window or tab.
- quit(): Quits the WebDriver session, closing all browser windows or tabs opened
-by WebDriver.
-21) What is XPath? How do you create XPath expressions?
-A. XPath is a query language used to navigate through XML documents or HTML 
-elements. 
- It allows locating elements based on their attributes, position, or relationship
-with other elements.
- XPath expressions can be created using various axes, node tests, and functions 
-to precisely identify elements on a web page.
-22) How do you handle frames in Selenium?
-A. You can handle frames in Selenium using WebDriver's switchTo().frame() method 
-to switch the focus to a specific frame by its name, index, or WebElement.
-23) Explain the difference between driver.findElement() and 
-WebElement.findElement()?
+   quit(): Quits the WebDriver session, closing all browser windows or tabs opened by WebDriver.
+
+23) What is XPath? How do you create XPath expressions?
+A. XPath is a query language used to navigate through XML documents or HTML elements. 
+ It allows locating elements based on their attributes, position, or relationship with other elements.
+ XPath expressions can be created using various axes, node tests, and functions to precisely identify elements on a web page.
+
+25) How do you handle frames in Selenium?
+A. You can handle frames in Selenium using WebDriver's switchTo().frame() method to switch the focus to a specific frame by its name, index, or WebElement.
+
+27) Explain the difference between driver.findElement() and WebElement.findElement()?
 A. driver.findElement(): Searches for elements in the entire HTML document. 
- WebElement.findElement(): Searches for elements within a specific WebElement.
-24) How do you handle checkboxes and radio buttons in Selenium?
-A. You can handle checkboxes and radio buttons in Selenium by locating them using 
-appropriate locators and then interacting with them using methods like click() or 
-isSelected().
-25) What is the difference between driver.get() and driver.navigate().to() methods?
+   WebElement.findElement(): Searches for elements within a specific WebElement.
+
+29) How do you handle checkboxes and radio buttons in Selenium?
+A. You can handle checkboxes and radio buttons in Selenium by locating them using appropriate locators and then interacting with them using methods like click() or isSelected().
+
+31) What is the difference between driver.get() and driver.navigate().to() methods?
 A. driver.get(): Navigates to a URL and waits for the page to load completely.
- driver.navigate().to(): Navigates to a URL without waiting for the page to load 
-completely.
- It allows additional navigation options like forward(), 
-back(), refresh().
-26) How do you handle cookies in Selenium?
-A. You can handle cookies in Selenium using methods provided by WebDriver's 
-Options interface, such as addCookie(), deleteCookie(), deleteAllCookies(), etc.
-27) Explain the difference between CSS Selector and XPath?
-A. CSS Selector : Uses CSS syntax to locate elements on a web page. It's generally 
-faster and more readable than XPath. 
- XPath : Uses XML path expressions to locate elements based on their attributes, 
-position, or relationship with other elements.
- It's more powerful but can be slower and less readable than CSS 
-Selector.
-28) What are the different types of annotations which are used in Selenium?
+   driver.navigate().to(): Navigates to a URL without waiting for the page to load completely.
+ It allows additional navigation options like forward(), back(), refresh().
+
+33) How do you handle cookies in Selenium?
+A. You can handle cookies in Selenium using methods provided by WebDriver's Options interface, such as addCookie(), deleteCookie(), deleteAllCookies(), etc.
+
+35) Explain the difference between CSS Selector and XPath?
+A. CSS Selector : Uses CSS syntax to locate elements on a web page. It's generally faster and more readable than XPath. 
+ XPath : Uses XML path expressions to locate elements based on their attributes, position, or relationship with other elements.
+ It's more powerful but can be slower and less readable than CSS Selector.
+
+37) What are the different types of annotations which are used in Selenium?
 A. Different types of annotations that are used in Selenium include:
-@BeforeSuite : This annotation is used to mark a method that should run before any 
-tests in the suite.
-@AfterSuite : This annotation is used to mark a method that should run after all 
-tests in the suite have been run.
-@BeforeTest : This annotation is used to mark a method that should run before any 
-test method belonging to the classes inside the <test> tag is run.
-@AfterTest : This annotation is used to mark a method that should run after all 
-the test methods belonging to the classes inside the <test> tag have run.
+@BeforeSuite : This annotation is used to mark a method that should run before any tests in the suite.
+@AfterSuite : This annotation is used to mark a method that should run after all tests in the suite have been run.
+@BeforeTest : This annotation is used to mark a method that should run before any test method belonging to the classes inside the <test> tag is run.
+@AfterTest : This annotation is used to mark a method that should run after all the test methods belonging to the classes inside the <test> tag have run.
 @Test : This annotation is used to mark a method as a test method
 @BeforeMethod: This annotation is used to execute a method before each test method
 @AfterMethod : This annotation is used to execute a method after each test method
-@BeforeClass : This annotation is used to execute a method before the first test 
-method.
-@AfterClass : This annotation is used to mark a method that should run after all 
-the test methods in the current class have been run.
-29) What are the testing types supported by Selenium? 
+@BeforeClass : This annotation is used to execute a method before the first test method.
+@AfterClass : This annotation is used to mark a method that should run after all the test methods in the current class have been run.
+
+39) What are the testing types supported by Selenium? 
 A. Selenium supports Regression testing and Functional testing. 
-Regression testing - It is a full or partial selection of already executed test 
-cases that are re-executed to ensure existing functionalities work fine.
+Regression testing - It is a full or partial selection of already executed test cases that are re-executed to ensure existing functionalities work fine.
+
 The steps involved are - 
-Re-testing : All tests in the existing test suite are executed. It proves to be 
-very expensive and time-consuming.
-Regression testing : Tests are classified as feature tests, integration tests, and 
-the end to end tests. In this step, some of the tests are selected.
-Prioritization of test cases: The selected test cases are prioritized based on 
-business impact and critical functionalities.
-Functional testing - Functional Testing involves the verification of every function
-of the application with the required specification.
-31) How to mouse over a web element? 
-A. Actions class utility is used to hover over a web element in Selenium WebDriver 
-Instantiate Actions class.
+Re-testing : All tests in the existing test suite are executed. It proves to be very expensive and time-consuming.
+Regression testing : Tests are classified as feature tests, integration tests, and the end to end tests.
+
+In this step, some of the tests are selected.
+Prioritization of test cases: The selected test cases are prioritized based on business impact and critical functionalities.
+Functional testing - Functional Testing involves the verification of every function of the application with the required specification.
+
+41) How to mouse over a web element? 
+A. Actions class utility is used to hover over a web element in Selenium WebDriver Instantiate Actions class.
  
  WebDriver driver = new ChromeDriver();
  driver.get("https://example.com");
  // Find an element to perform cursor actions on
- WebElement element = 
-driver.findElement(By.cssSelector("css-selector-of-element"));
+ WebElement element = driver.findElement(By.cssSelector("css-selector-of-element"));
  // Instantiate Actions class
  Actions actions = new Actions(driver);
  // Example cursor actions
@@ -471,21 +453,20 @@ driver.findElement(By.cssSelector("css-selector-of-element"));
  actions.clickAndHold(element).perform(); // Click and Hold
  actions.release().perform(); // Release after click-and-hold
  actions.moveToElement(element).perform(); // Move to Element
- actions.dragAndDropBy(element, xOffset, yOffset).perform(); // Drag and 
-Drop by offset
+ actions.dragAndDropBy(element, xOffset, yOffset).perform(); // Drag and Drop by offset
  actions.moveByOffset(xOffset, yOffset).perform(); // Move By Offset
+ 
 32) How to retrieve CSS properties of an element?
 A. getCssValue() method is used to retrieve CSS properties of any web element
  
- General Syntax : driver.findElement(By.id(“id“)).getCssValue(“name of css 
-attribute”);
+ General Syntax : driver.findElement(By.id(“id“)).getCssValue(“name of css attribute”);
  Example : driver.findElement(By.id(“email“)).getCssValue(“font-size”);
+ 
 33) How to take screenshots in WebDriver?
 A. TakeScreenshot interface can be used to take screenshots in WebDriver. 
 getScreenshotAs() method can be used to save the screenshot
  File screenshot = ((TakeScreenshot)driver).getScreenshotAs(outputType.FILE);
- Files.copy(screenshotfile.toPath(),new 
-File("screenshot.png").toPath(),StandardCopyOption.REPLACE_EXISTING);
+ Files.copy(screenshotfile.toPath(),new File("screenshot.png").toPath(),StandardCopyOption.REPLACE_EXISTING);
  or 
  File screenshot = ((TakeScreenshot)driver).getScreenshotAs(outputType.FILE);
  File Destinationfile = new File("screenshot.png");
